@@ -1,0 +1,19 @@
+<div class="view-tasks-container flex-column justify-content-center col-12">
+  <div class="action-buttons-container flex justify-content-between col-12">
+    <div class="status-buttons">
+      <button class="status-button">Todas</button>
+      <button class="status-button">Pendentes</button>
+      <button class="status-button">Em Andamento</button>
+      <button class="status-button">Concluidas</button>
+    </div>
+    <div class="add-button">
+      <button class="new-task-button">
+        <lucide-icon [img]="Plus" class="plus-icon"></lucide-icon>
+        Nova Tarefa
+      </button>
+    </div>
+  </div>
+  <div class="task-cards-container flex flex-wrap justify-content-between">
+    <app-task-card *ngFor="let task of tasks" [task]="task" class="col-12 lg:col-5"></app-task-card>
+  </div>
+</div>

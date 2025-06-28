@@ -1,0 +1,33 @@
+<div class="task-card-container flex-column justify-content-center">
+  <div class="col-12 flex justify-content-between align-items-center">
+    <p class="task-title">{{ task.title }}</p>
+    <!-- <button class="menu-button">
+      <lucide-icon [img]="MoreVertical" class="menu-icon"></lucide-icon>
+    </button> -->
+    <lucide-icon matButton [matMenuTriggerFor]="menu" [img]="MoreVertical" class="menu-icon"></lucide-icon>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item class="menu-option c">Concluída</button>
+      <button mat-menu-item class="menu-option e">Em Andamento</button>
+      <button mat-menu-item class="menu-option p">Pendente</button>
+    </mat-menu>
+  </div>
+  <div class="col-12 flex-column justify-content-center align-items-center">
+    <span class="task-status" ngClass="{{ task.status }}">{{
+      task.status
+    }}</span>
+    <p class="task-description mt-1">
+      {{ task.description }}
+    </p>
+  </div>
+  <div class="col-12">
+    <div class="task-date flex align-items-center justify-content-evenly">
+      <div class="flex align-items-center">
+        <lucide-icon [img]="Calendar" class="calendar-icon mb-3"></lucide-icon>
+        <p class="date-text mx-3">{{ formatDate(task.deadLineDate) }}</p>
+      </div>
+      <span class="date-status" ngClass="" *ngIf="isOverdue(task.deadLineDate)"
+        >Atrasada</span
+      >
+    </div>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+.view-tasks-container{
+  width: 60%;
+  margin: 0 auto;
+}
+
+.status-button {
+  background-color: #f8f9fa;
+  border: 1px solid #bcbdbd;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-family: "Inconsolata", monospace;
+  font-size: 16px;
+  font-weight: 700;
+  color: #6c757d;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-right: 8px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 40px;
+}
+
+.action-buttons-container{
+  border-bottom: 3px solid #939597;
+  margin-bottom: 20px;
+}
+
+.status-button:hover {
+  background-color: #343a40;
+  color: #f0f0f0;
+  border-color: #dee2e6;
+}
+
+.status-button.active {
+  background-color: #343a40;
+  color: #f0f0f0;
+  border-color: #343a40;
+}
+
+.new-task-button {
+  background-color: #119217;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-family: "Inconsolata", monospace;
+  font-size: 16px;
+  font-weight: 700;
+  color: #f0f0f0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.new-task-button:hover {
+  background-color: #f0f0f0;
+  color: #119217;
+  border-color: #9ca3af;
+}
+
