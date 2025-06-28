@@ -16,6 +16,19 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+//Habilitando o CORS para permitir requisições de qualquer origem
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
+
+app.UseCors("AllowAllOrigins");
+
 app.UseHttpsRedirection();
 
 //Estou utilizando o recurso minimal APIs do ASP.NET Core para eliminar a necessidade de criar um Controller
