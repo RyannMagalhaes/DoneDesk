@@ -4,6 +4,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+//Injetando o serviço de contexto para utilizar o Sqlite
+builder.Services.AddScoped<Tasks.Data.TaskContext>();
 
 var app = builder.Build();
 
