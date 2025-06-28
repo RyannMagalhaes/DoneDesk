@@ -1,25 +1,25 @@
 <div class="task-card-container flex-column justify-content-center">
   <div class="col-12 flex justify-content-between align-items-center">
-    <p class="task-title">Reunião com cliente</p>
+    <p class="task-title">{{ task.title }}</p>
     <button class="menu-button">
       <lucide-icon [img]="MoreVertical" class="menu-icon"></lucide-icon>
     </button>
   </div>
   <div class="col-12 flex-column justify-content-center align-items-center">
-    <span class="task-status pendente">Pendente</span>
+    <span class="task-status" ngClass={{task.status}}>{{ task.status }}</span>
     <p class="task-description mt-1">
-      Apresentar proposta de redesign do website corporativo
+      {{ task.description }}
     </p>
   </div>
   <div class="col-12">
     <div
-      class="task-date overdue flex align-items-center justify-content-evenly"
+      class="task-date flex align-items-center justify-content-evenly"
     >
       <div class="flex align-items-center">
         <lucide-icon [img]="Calendar" class="calendar-icon mb-3"></lucide-icon>
-        <p class="date-text mx-3">02 de julho</p>
+        <p class="date-text mx-3">{{formatDate(task.deadLineDate)}}</p>
       </div>
-      <span class="date-status"> Atrasada</span>
+      <span class="date-status"  ngClass="" *ngIf="isOverdue(task.deadLineDate)">Atrasada</span>
     </div>
   </div>
 </div>

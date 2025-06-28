@@ -58,12 +58,12 @@
   color: #92400e;
 }
 
-.task-status.em-progresso {
+.task-status.em.andamento {
   background-color: #dbeafe;
   color: #1e40af;
 }
 
-.task-status.concluida {
+.task-status.concluída {
   background-color: #d1fae5;
   color: #065f46;
 }
@@ -109,14 +109,10 @@
   margin-bottom: 4px;
 }
 
-.task-date.overdue {
-  color: #881515;
-}
-
 .calendar-icon {
   width: 12px;
   height: 12px;
-  color: #dc2626;
+  color: #6b7280;
 }
 
 .date-text {

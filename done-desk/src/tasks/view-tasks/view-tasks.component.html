@@ -14,6 +14,6 @@
     </div>
   </div>
   <div class="task-cards-container">
-    <app-task-card></app-task-card>
+    <app-task-card *ngFor="let task of tasks" [task]="task"></app-task-card>
   </div>
 </div>
