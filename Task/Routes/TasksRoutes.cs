@@ -7,6 +7,8 @@ public static class TasksRoute
 {
     public static void TasksRoutes(WebApplication app)
     {
-        app.MapGet("tasks", () => "testando retorno de task");
+        app.MapGet("tasks", () => new TaskModel("Tarefa de Exemplo", "Descrição da tarefa", DateTime.Now.AddDays(7), Task.Models.TaskStatus.Pendente))
+            .WithName("GetTasks")
+            .WithTags("Tasks");
     }
 }
