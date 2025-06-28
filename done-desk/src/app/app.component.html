@@ -2,7 +2,7 @@
   @import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 </style>
 
-<main class="main">
+<main class="main flex-column justify-content-center">
   <div class="content">
     <h1>
       <lucide-icon [img]="ListCheck" class="list-icon"></lucide-icon>
@@ -10,7 +10,7 @@
     </h1>
     <p>Gerencie suas tarefas de forma simples e eficiente.</p>
   </div>
-  <div class="tasks-container">
+  <div class="tasks-container flex justify-content-center">
     <app-view-tasks></app-view-tasks>
   </div>
 </main>

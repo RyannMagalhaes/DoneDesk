@@ -1,1 +1,19 @@
-<p>view-tasks works!</p>
+<div class="view-tasks-container">
+  <div class="action-buttons-container flex justify-content-between">
+    <div class="status-buttons">
+      <button class="status-button">Todas</button>
+      <button class="status-button">Pendentes</button>
+      <button class="status-button">Em Andamento</button>
+      <button class="status-button">Concluidas</button>
+    </div>
+    <div class="add-button">
+      <button class="new-task-button">
+        <lucide-icon [img]="Plus" class="plus-icon"></lucide-icon>
+        Nova Tarefa
+      </button>
+    </div>
+  </div>
+  <div class="task-cards-container">
+    <app-task-card></app-task-card>
+  </div>
+</div>

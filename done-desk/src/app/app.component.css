@@ -10,7 +10,6 @@ main {
   background-color: #f0f0f0;
   font-family: "Inconsolata", monospace;
   text-align: center;
-  width: 100%;
   height: 100vh;
   h1 {
     color: #313332;
@@ -33,5 +32,7 @@ main {
   stroke-width: 2;
 }
 
-.content {
+.tasks-container{
+  margin-top: 50px;
 }
+
