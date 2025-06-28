@@ -6,12 +6,11 @@
   background-color: #ffffff;
   border: 1px solid #e5e7eb;
   border-radius: 8px;
-  padding: 16px;
+  padding: 12px;
   margin-bottom: 16px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
   transition: all 0.2s ease;
-  max-width: 400px;
   font-family: "Inconsolata", monospace;
 }
 
@@ -148,4 +147,16 @@
 
 .created-text {
   font-weight: 400;
+}
+
+.menu-option {
+  &.c {
+    color: #065f46;
+  }
+  &.e {
+    color: #1e40af;
+  }
+  &.p {
+    color: #babd1c;
+  }
 }

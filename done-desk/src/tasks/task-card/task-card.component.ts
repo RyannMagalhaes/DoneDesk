@@ -2,11 +2,14 @@ import { Component, Input } from '@angular/core';
 import { Calendar, Clock, MoreVertical, LucideAngularModule } from 'lucide-angular';
 import { CommonModule } from '@angular/common';
 import { Task, mockTasks } from '../../models/task.model';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
+
 
 @Component({
   selector: 'app-task-card',
   standalone: true,
-  imports: [LucideAngularModule, CommonModule],
+  imports: [LucideAngularModule, CommonModule, MatButtonModule, MatMenuModule],
   templateUrl: './task-card.component.html',
   styleUrl: './task-card.component.css'
 })

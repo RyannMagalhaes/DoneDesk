@@ -1,5 +1,5 @@
-<div class="view-tasks-container">
-  <div class="action-buttons-container flex justify-content-between">
+<div class="view-tasks-container flex-column justify-content-center col-12">
+  <div class="action-buttons-container flex justify-content-between col-12">
     <div class="status-buttons">
       <button class="status-button">Todas</button>
       <button class="status-button">Pendentes</button>
@@ -13,7 +13,7 @@
       </button>
     </div>
   </div>
-  <div class="task-cards-container">
-    <app-task-card *ngFor="let task of tasks" [task]="task"></app-task-card>
+  <div class="task-cards-container flex flex-wrap justify-content-between">
+    <app-task-card *ngFor="let task of tasks" [task]="task" class="col-12 lg:col-5"></app-task-card>
   </div>
 </div>
