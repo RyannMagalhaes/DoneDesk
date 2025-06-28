@@ -8,9 +8,11 @@ public static class TasksRoute
     public static void TasksRoutes(WebApplication app)
     {
         //Endpoint que retorna as tarefas
-        app.MapGet("tasks", () => new TaskModel("Tarefa de Exemplo", "Descrição da tarefa", DateTime.Now.AddDays(7), Task.Models.TaskStatus.Pendente))
-            .WithName("GetTasks")
-            .WithTags("Tasks");
+        app.MapGet("tasks", (Tasks.Data.TaskContext context) =>
+        {
+            var tasks = context.Tasks.ToList();
+            return Results.Ok(tasks);
+        });
 
         //Endpoint que cria uma nova tarefa
         app.MapPost("tasks/new", (TaskModel task, Tasks.Data.TaskContext context) =>
@@ -32,9 +34,6 @@ public static class TasksRoute
                 return Results.NotFound();
             }
             //Atualizando as propriedades da tarefa
-            task.Title = updatedTask.Title;
-            task.Description = updatedTask.Description;
-            task.DeadLineDate = updatedTask.DeadLineDate;
             task.Status = updatedTask.Status;
             //Salvando as alterações no banco de dados
             context.SaveChanges();
