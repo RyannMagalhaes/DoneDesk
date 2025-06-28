@@ -3,7 +3,7 @@ namespace Task.Models;
 //Estou criando um model para definir as propriedades do objeto que será trafegado entre a API e o Frontend.
 public class TaskModel
 {
-    public TaskModel(string title, string description, DateTime deadLineDate, TaskStatus status)
+    public TaskModel(string title, string description, DateTime deadLineDate, string status)
     {
         Id = Guid.NewGuid(); //Gero um novo Guid para cada tarefa
         Title = title;
@@ -19,5 +19,5 @@ public class TaskModel
     public string Title { get; set; }
     public string Description { get; set; }
     public DateTime DeadLineDate { get; set; }
-    public TaskStatus Status { get; set; }
+    public string Status { get; set; }
 }

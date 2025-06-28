@@ -10,7 +10,14 @@ public static class TasksRoute
         //Endpoint que retorna as tarefas
         app.MapGet("tasks", (Tasks.Data.TaskContext context) =>
         {
-            var tasks = context.Tasks.ToList();
+            var tasks = context.Tasks;
+            return Results.Ok(tasks);
+        });
+
+        //Endpoint que retorna as tarefas filtradas por status
+        app.MapGet("tasks/status/{status}", (string status, Tasks.Data.TaskContext context) =>
+        {
+            var tasks = context.Tasks.Where(task => task.Status.ToLower() == status.ToLower());
             return Results.Ok(tasks);
         });
 
