@@ -4,13 +4,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 
 main {
   background-color: #f0f0f0;
   font-family: "Inconsolata", monospace;
   text-align: center;
-  height: 100vh;
+  min-height: 100vh;
   h1 {
     color: #313332;
     font-size: 60px;
