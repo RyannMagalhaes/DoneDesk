@@ -1,6 +1,6 @@
 import { Task } from './../../models/task.model';
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LucideAngularModule, X } from 'lucide-angular';
 import { MatDialogRef } from '@angular/material/dialog';
@@ -22,6 +22,8 @@ export class NewTaskModalComponent {
   title = '';
   description = '';
   deadLineDate!: Date;
+
+  @Output() taskCreated = new EventEmitter();
 
   constructor(
     public dialogRef: MatDialogRef<NewTaskModalComponent>,
@@ -45,6 +47,7 @@ export class NewTaskModalComponent {
     this.taskService.createTask(taskPayload).subscribe({
       next: (response) => {
         console.log('Tarefa criada com sucesso', response);
+        this.taskCreated.emit();
         this.dialogRef.close(response);
       },
       error: (error) => {
