@@ -159,4 +159,7 @@
   &.p {
     color: #babd1c;
   }
+  &.ex {
+    color: #b91c1c;
+  }
 }

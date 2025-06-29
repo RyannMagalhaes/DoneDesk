@@ -1,0 +1,57 @@
+<div class="modal-overlay">
+  <div class="modal-container">
+    <div class="modal-header">
+      <h2 class="modal-title">Criar Nova Tarefa</h2>
+      <button class="close-button" (click)="closeModal()">
+        <lucide-icon [img]="X"></lucide-icon>
+      </button>
+    </div>
+
+    <form class="modal-form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="title" class="form-label">Título *</label>
+        <input
+          type="text"
+          id="title"
+          class="form-input"
+          placeholder="Digite o título da tarefa..."
+          name="title"
+          [(ngModel)]="title"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="description" class="form-label">Descrição</label>
+        <textarea
+          id="description"
+          class="form-textarea"
+          placeholder="Descreva os detalhes da tarefa..."
+          name="description"
+          [(ngModel)]="description"
+          rows="4"
+        >
+        </textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="deadline" class="form-label">Data de Vencimento *</label>
+        <input
+          type="date"
+          id="deadline"
+          class="form-input"
+          name="deadline"
+          [(ngModel)]="deadLineDate"
+          required
+        />
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-cancel" (click)="closeModal()">
+          Cancelar
+        </button>
+        <button type="submit" class="btn-create">Criar Tarefa</button>
+      </div>
+    </form>
+  </div>
+</div>

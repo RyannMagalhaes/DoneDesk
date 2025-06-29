@@ -7,15 +7,6 @@ builder.Services.AddSwaggerGen();
 //Injetando o serviço de contexto para utilizar o Sqlite
 builder.Services.AddScoped<Tasks.Data.TaskContext>();
 
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
 //Habilitando o CORS para permitir requisições de qualquer origem
 builder.Services.AddCors(options =>
 {
@@ -26,6 +17,17 @@ builder.Services.AddCors(options =>
               .AllowAnyHeader();
     });
 });
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+
 
 app.UseCors("AllowAllOrigins");
 
