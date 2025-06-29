@@ -50,7 +50,6 @@ export class TaskCardComponent {
   }
 
   deleteTask(): void {
-    console.log(this.task.id);
     this.taskService.deleteTask(this.task.id as number).subscribe({
       next: () => {
         console.log('Tarefa excluída com sucesso');

@@ -30,7 +30,6 @@ export class ViewTasksComponent implements OnInit{
   }
 
   abrirModal() {
-    console.log('Abrindo modal de nova tarefa');
     const dialogRef = this.dialog.open(NewTaskModalComponent, {
       width: '400px'
     });
@@ -39,7 +38,7 @@ export class ViewTasksComponent implements OnInit{
   getTaskList(){
     this.taskService.getTasks().subscribe({
       next: (tasks) => {
-        console.log('Tarefas carregadas:', tasks);
+        console.log('Tarefas carregadas');
         this.tasks = tasks;
       },
       error: (error) => {
@@ -51,7 +50,7 @@ export class ViewTasksComponent implements OnInit{
   filterTaskByStatus(status: string) {
     this.taskService.getTaskByStatus(status).subscribe({
       next: (tasks) => {
-        console.log(`Tarefas com status ${status} carregadas:`, tasks);
+        console.log(`Tarefas com status ${status} carregadas`);
         this.tasks = tasks;
       },
       error: (error) => {
