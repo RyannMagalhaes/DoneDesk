@@ -6,9 +6,10 @@
     </button> -->
     <lucide-icon matButton [matMenuTriggerFor]="menu" [img]="MoreVertical" class="menu-icon"></lucide-icon>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item class="menu-option c">Concluída</button>
-      <button mat-menu-item class="menu-option e">Em Andamento</button>
-      <button mat-menu-item class="menu-option p">Pendente</button>
+      <button mat-menu-item (click)="editTaskStatus('concluída')" class="menu-option c">Concluída</button>
+      <button mat-menu-item (click)="editTaskStatus('em andamento')" class="menu-option e">Em Andamento</button>
+      <button mat-menu-item (click)="editTaskStatus('pendente')" class="menu-option p">Pendente</button>
+      <button mat-menu-item class="menu-option ex" (click)="deleteTask()">Excluir</button>
     </mat-menu>
   </div>
   <div class="col-12 flex-column justify-content-center align-items-center">

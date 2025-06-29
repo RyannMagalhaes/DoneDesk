@@ -16,7 +16,9 @@
           class="form-input"
           placeholder="Digite o título da tarefa..."
           name="title"
-          required>
+          [(ngModel)]="title"
+          required
+        />
       </div>
 
       <div class="form-group">
@@ -26,7 +28,9 @@
           class="form-textarea"
           placeholder="Descreva os detalhes da tarefa..."
           name="description"
-          rows="4">
+          [(ngModel)]="description"
+          rows="4"
+        >
         </textarea>
       </div>
 
@@ -37,16 +41,16 @@
           id="deadline"
           class="form-input"
           name="deadline"
-          required>
+          [(ngModel)]="deadLineDate"
+          required
+        />
       </div>
 
       <div class="modal-actions">
         <button type="button" class="btn-cancel" (click)="closeModal()">
           Cancelar
         </button>
-        <button type="submit" class="btn-create">
-          Criar Tarefa
-        </button>
+        <button type="submit" class="btn-create">Criar Tarefa</button>
       </div>
     </form>
   </div>
