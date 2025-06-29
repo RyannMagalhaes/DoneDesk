@@ -26,11 +26,8 @@ main {
 }
 
 .list-icon {
-  width: 50px !important;
-  height: 50px !important;
-  font-size: 25px !important;
   color: #313332;
-  stroke-width: 15px;
+  margin-right: -25px;
 }
 
 .tasks-container{
