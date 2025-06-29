@@ -2,9 +2,18 @@
   <div class="action-buttons-container flex justify-content-between col-12">
     <div class="status-buttons">
       <button class="status-button" (click)="getTaskList()">Todas</button>
-      <button class="status-button" (click)="filterTaskByStatus('pendente')">Pendentes</button>
-      <button class="status-button" (click)="filterTaskByStatus('em andamento')">Em Andamento</button>
-      <button class="status-button" (click)="filterTaskByStatus('concluída')">Concluidas</button>
+      <button class="status-button" (click)="filterTaskByStatus('pendente')">
+        Pendentes
+      </button>
+      <button
+        class="status-button"
+        (click)="filterTaskByStatus('em andamento')"
+      >
+        Em Andamento
+      </button>
+      <button class="status-button" (click)="filterTaskByStatus('concluída')">
+        Concluidas
+      </button>
     </div>
     <div class="add-button">
       <button class="new-task-button" (click)="abrirModal()">
@@ -14,6 +23,11 @@
     </div>
   </div>
   <div class="task-cards-container flex flex-wrap justify-content-between">
-    <app-task-card *ngFor="let task of tasks" [task]="task" class="col-12 lg:col-5" (taskDeleted)="getTaskList()"></app-task-card>
+    <app-task-card
+      *ngFor="let task of tasks"
+      [task]="task"
+      class="col-12 lg:col-5"
+      (taskDeleted)="getTaskList()"
+    ></app-task-card>
   </div>
 </div>

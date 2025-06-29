@@ -33,6 +33,12 @@ export class ViewTasksComponent implements OnInit{
     const dialogRef = this.dialog.open(NewTaskModalComponent, {
       width: '400px'
     });
+
+    dialogRef.afterClosed().subscribe(result => {
+    if (result) {
+      this.getTaskList();
+    }
+  });
   }
 
   getTaskList(){
